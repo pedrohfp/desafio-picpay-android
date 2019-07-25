@@ -1,6 +1,6 @@
 package dependencies
 
-object PluginVersions {
+object PluginsVersions {
     const val KOTLIN = "1.3.21"
     const val GRADLE = "3.4.2"
 }
