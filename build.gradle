@@ -1,4 +1,5 @@
 import dependencies.BuildPlugins
+import dependencies.Dependencies
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
@@ -19,6 +20,29 @@ allprojects {
         google()
         jcenter()
         
+    }
+}
+
+subprojects {
+    afterEvaluate {
+        if (!project.hasProperty("android")) return
+
+        android {
+            compileSdkVersion AndroidConfig.COMPILE_SDK
+
+            defaultConfig {
+                applicationId AndroidConfig.APPLICATION_ID
+                minSdkVersion AndroidConfig.MIN_SDK
+                targetSdkVersion AndroidConfig.TARGET_SDK
+                versionCode AndroidConfig.VERSION_CODE
+                versionName AndroidConfig.VERSION_NAME
+                testInstrumentationRunner AndroidConfig.TEST_INSTRUMENTATION_RUNNER
+            }
+        }
+
+        dependencies {
+            implementation Dependencies.KOTLIN
+        }
     }
 }
 
