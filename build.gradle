@@ -25,6 +25,7 @@ allprojects {
 
 subprojects {
     afterEvaluate {
+
         if (!project.hasProperty("android")) return
 
         android {
