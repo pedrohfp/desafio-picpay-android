@@ -13,7 +13,6 @@ detekt {
     }
 }
 
-
 configurations {
     ktlint
 }
