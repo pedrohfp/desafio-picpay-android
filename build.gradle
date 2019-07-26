@@ -12,6 +12,7 @@ buildscript {
     dependencies {
         classpath BuildPlugins.GRADLE
         classpath BuildPlugins.KOTLIN
+        classpath BuildPlugins.DETEKT
     }
 }
 

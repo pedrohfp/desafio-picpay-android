@@ -1,4 +1,18 @@
 import dependencies.Dependencies
+import dependencies.PluginsVersions
+
+apply plugin: "io.gitlab.arturbosch.detekt"
+
+detekt {
+    version = PluginsVersions.DETEKT
+    profile("main") {
+        input = "$projectDir"
+        filters = ".*test.*,.*/resources/.*,.*/tmp/.*"
+        output = "${project.buildDir}/reports/detekt.xml"
+        parallel = true
+    }
+}
+
 
 configurations {
     ktlint
