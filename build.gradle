@@ -33,7 +33,6 @@ subprojects {
             compileSdkVersion AndroidConfig.COMPILE_SDK
 
             defaultConfig {
-                applicationId AndroidConfig.APPLICATION_ID
                 minSdkVersion AndroidConfig.MIN_SDK
                 targetSdkVersion AndroidConfig.TARGET_SDK
                 versionCode AndroidConfig.VERSION_CODE
