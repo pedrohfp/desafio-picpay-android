@@ -1,4 +1,5 @@
 import dependencies.Dependencies
+import dependencies.Modules
 
 apply plugin: 'com.android.application'
 apply from: "$rootDir/tools/commons_build_config.gradle"
@@ -11,7 +12,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(Modules.NETWORK)
+
     implementation Dependencies.Android.APPCOMPAT
     implementation Dependencies.KTX
     implementation Dependencies.Android.CONSTRAINT_LAYOUT
+    implementation Dependencies.Koin.CORE
 }
