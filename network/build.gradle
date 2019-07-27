@@ -3,6 +3,12 @@ import dependencies.Dependencies
 apply plugin: 'com.android.library'
 apply from: "$rootDir/tools/commons_build_config.gradle"
 
+android {
+    defaultConfig {
+        buildConfigField "String", "API_URL", "http://careers.picpay.com/"
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
