@@ -30,6 +30,4 @@ val networkModule = module {
             .client(get())
             .build()
     }
-
-
 }
