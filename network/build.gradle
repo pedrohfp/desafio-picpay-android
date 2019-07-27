@@ -5,7 +5,7 @@ apply from: "$rootDir/tools/commons_build_config.gradle"
 
 android {
     defaultConfig {
-        buildConfigField "String", "API_URL", "http://careers.picpay.com/"
+        buildConfigField "String", "API_URL", "\"http://careers.picpay.com/\""
     }
 }
 
