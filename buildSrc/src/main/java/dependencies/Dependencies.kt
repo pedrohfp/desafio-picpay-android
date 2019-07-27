@@ -16,4 +16,10 @@ object Dependencies {
         const val SCOPE = "org.koin:koin-androidx-scope:${Versions.KOIN}"
         const val VIEWMODEL = "org.koin:koin-androidx-viewmodel:${Versions.KOIN}"
     }
+
+    object Network {
+        const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
+        const val RETROFIT_GSON = "com.squareup.retrofit2:converter-gson:${Versions.RETROFIT}"
+        const val LOGGING = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP}"
+    }
 }
