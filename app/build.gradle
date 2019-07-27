@@ -14,4 +14,5 @@ dependencies {
     implementation Dependencies.Android.APPCOMPAT
     implementation Dependencies.KTX
     implementation Dependencies.Android.CONSTRAINT_LAYOUT
+    implementation Dependencies.Koin.CORE
 }
