@@ -5,6 +5,7 @@ object Dependencies {
     const val KTX = "androidx.core:core-ktx:${Versions.CORE_KTX}"
     const val KTLINT = "com.pinterest:ktlint:${Versions.KTLINT}"
     const val KOIN = "org.koin:koin-android:${Versions.KOIN}"
+    const val ARCH_COMPONENTS = "androidx.lifecycle:lifecycle-extensions:${Versions.ARCH_COMPONENTS}"
 
     object Android {
         const val APPCOMPAT = "androidx.appcompat:appcompat:${Versions.ANDROIDX}"

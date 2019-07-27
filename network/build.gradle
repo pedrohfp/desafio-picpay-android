@@ -19,4 +19,5 @@ dependencies {
     implementation Dependencies.Network.RETROFIT
     implementation Dependencies.Network.RETROFIT_GSON
     implementation Dependencies.Network.LOGGING
+    implementation Dependencies.ARCH_COMPONENTS
 }
