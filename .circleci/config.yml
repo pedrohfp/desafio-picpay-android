@@ -28,6 +28,14 @@ jobs:
           name: Android lint
           command: ./gradlew lint
 
+      - run:
+          name: Run Tests and generate Code Coverage
+          command: ./gradlew jacocoTestReport
+
+      - run:
+          name: Upload code coverage data
+          command: ./gradlew coveralls
+
       - save_cache:
           paths:
             - ~/.gradle
