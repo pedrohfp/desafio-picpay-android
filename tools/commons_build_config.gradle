@@ -3,7 +3,7 @@ import dependencies.TestDependencies
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply from: "$rootDir/tools/linters_config.gradle"
-apply from: "$rootDir/tools/coverage_config.gradle"
+apply from: "$rootDir/tools/jacoco.gradle"
 
 android {
     buildTypes {
