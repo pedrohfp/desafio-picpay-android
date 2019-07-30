@@ -38,7 +38,7 @@ jobs:
 
       - run:
           name: Launch emulator
-          emulator -avd circleci-android22 -no-audio -no-window:
+          command: emulator -avd circleci-android22 -no-audio -no-window:
             background: true
             parallel: true
 
