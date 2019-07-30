@@ -1,0 +1,37 @@
+import dependencies.Dependencies
+import dependencies.PluginsVersions
+
+apply plugin: "io.gitlab.arturbosch.detekt"
+
+detekt {
+    version = PluginsVersions.DETEKT
+    profile("main") {
+        input = "$projectDir"
+        filters = ".*test.*,.*/resources/.*,.*/tmp/.*"
+        output = "${project.buildDir}/reports/detekt.xml"
+        parallel = true
+    }
+}
+
+configurations {
+    ktlint
+}
+
+task ktlint(type: JavaExec, group: "verification") {
+    description = "Check Kotlin code style."
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args "src/**/*.kt"
+}
+check.dependsOn ktlint
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args "-F", "src/**/*.kt"
+}
+
+dependencies {
+    ktlint Dependencies.KTLINT
+}

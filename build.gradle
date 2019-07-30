@@ -1,3 +1,5 @@
+import dependencies.BuildPlugins
+import dependencies.Dependencies
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
@@ -5,13 +7,14 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+        maven { url RepositoriesUri.GRADLE }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath BuildPlugins.GRADLE
+        classpath BuildPlugins.KOTLIN
+        classpath BuildPlugins.DETEKT
+        classpath BuildPlugins.JACOCO
+        classpath BuildPlugins.COVERALLS
     }
 }
 
@@ -19,7 +22,29 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+    }
+}
+
+subprojects {
+    afterEvaluate {
+
+        if (!project.hasProperty("android")) return
+
+        android {
+            compileSdkVersion AndroidConfig.COMPILE_SDK
+
+            defaultConfig {
+                minSdkVersion AndroidConfig.MIN_SDK
+                targetSdkVersion AndroidConfig.TARGET_SDK
+                versionCode AndroidConfig.VERSION_CODE
+                versionName AndroidConfig.VERSION_NAME
+                testInstrumentationRunner AndroidConfig.TEST_INSTRUMENTATION_RUNNER
+            }
+        }
+
+        dependencies {
+            implementation Dependencies.KOTLIN
+        }
     }
 }
 
