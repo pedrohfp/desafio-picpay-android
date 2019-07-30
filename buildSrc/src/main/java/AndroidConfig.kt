@@ -5,5 +5,9 @@ object AndroidConfig {
     const val TARGET_SDK = COMPILE_SDK
     const val VERSION_CODE = 1
     const val VERSION_NAME = "1.0"
-    const val TEST_INSTRUMENTATION_RUNNER = "br.com.odete.commonstest.test.di.CustomTestRunner"
+    const val TEST_INSTRUMENTATION_RUNNER = "androidx.test.runner.AndroidJUnitRunner"
+}
+
+object RepositoriesUri {
+    const val GRADLE = "https://plugins.gradle.org/m2/"
 }
