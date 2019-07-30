@@ -65,5 +65,5 @@ task jacocoTestReport(type: JacocoReport) {
 
 coveralls {
     sourceDirs = sources.flatten()
-    jacocoReportPath = "$buildDir/reports/jacoco/jacocoTestReport.xml"
+    jacocoReportPath = "$buildDir/reports/jacoco/jacocoTestReport/jacocoTestReport.xml"
 }
