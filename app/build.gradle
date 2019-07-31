@@ -2,7 +2,7 @@ import dependencies.Dependencies
 import dependencies.Modules
 
 apply plugin: 'com.android.application'
-apply from: "$rootDir/tools/commons_build_config.gradle"
+apply from: "$rootDir/tools/base_build_config.gradle"
 
 android {
     defaultConfig {
@@ -14,6 +14,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(Modules.NETWORK)
+    implementation project(Modules.STYLEGUIDE)
 
     implementation Dependencies.Android.APPCOMPAT
     implementation Dependencies.KTX
