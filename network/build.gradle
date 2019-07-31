@@ -16,8 +16,8 @@ dependencies {
     implementation Dependencies.KTX
     implementation Dependencies.Android.CONSTRAINT_LAYOUT
     implementation Dependencies.Koin.CORE
-    implementation Dependencies.Network.RETROFIT
-    implementation Dependencies.Network.RETROFIT_GSON
-    implementation Dependencies.Network.LOGGING
     implementation Dependencies.ARCH_COMPONENTS
+    implementation Dependencies.Network.LOGGING
+    api Dependencies.Network.RETROFIT
+    api Dependencies.Network.RETROFIT_GSON
 }
