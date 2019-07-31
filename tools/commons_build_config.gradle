@@ -18,6 +18,10 @@ android {
 
 dependencies {
     testImplementation TestDependencies.JUNIT
+    testImplementation TestDependencies.ROBOLECTRIC
+    testImplementation TestDependencies.MOCKITO_KOTLIN
+    testImplementation TestDependencies.MOCK_WEB_SERVER
+
     androidTestImplementation TestDependencies.ESPRESSO_RUNNER
     androidTestImplementation TestDependencies.ESPRESSO_CORE
 }
