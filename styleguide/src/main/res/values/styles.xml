@@ -3,4 +3,25 @@
   <style name="DarkAppTheme" parent="Theme.AppCompat.DayNight">
     <item name="colorAccent">@color/colorAccent</item>
   </style>
+
+  <style name="TextTitleHuge">
+    <item name="android:textSize">28sp</item>
+  </style>
+
+  <style name="TextTitleMajor">
+    <item name="android:textSize">20sp</item>
+  </style>
+  
+  <style name="TextTitleMedium">
+    <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="TextTitleSmall">
+    <item name="android:textSize">14sp</item>
+  </style>
+
+  <style name="ButtonStandard">
+    <item name="android:background">@drawable/button_standard_background</item>
+    <item name="android:textColor">@color/colorPrimary</item>
+  </style>
 </resources>
