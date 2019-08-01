@@ -21,6 +21,7 @@ dependencies {
     testImplementation TestDependencies.ROBOLECTRIC
     testImplementation TestDependencies.MOCKITO_KOTLIN
     testImplementation TestDependencies.MOCK_WEB_SERVER
+    testImplementation TestDependencies.ARCH_TESTING
 
     androidTestImplementation TestDependencies.ESPRESSO_RUNNER
     androidTestImplementation TestDependencies.ESPRESSO_CORE

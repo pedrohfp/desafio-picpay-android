@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 
 internal class UserListRepository(
     private val userListRemoteDataSource: UserListRemoteDataSource
-): UserListDataSource {
+) : UserListDataSource {
     override fun getUserList(): LiveData<UserDTO> =
         userListRemoteDataSource.getUserList()
 }
