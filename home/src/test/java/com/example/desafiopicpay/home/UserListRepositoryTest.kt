@@ -31,12 +31,12 @@ class UserListRepositoryTest {
 
     @Test
     fun whenGetUserListCalled_verifyObserverChanged() {
-        val mockUserList = mockUserList()
+        val mockUserList = listOf(mockUserList())
 
         whenever(userListAPI.getUserList())
             .mockAndSendResponse(mockUserList)
 
-        val observer = mock<Observer<UserDTO>>()
+        val observer = mock<Observer<List<UserDTO>>>()
 
         userListRepository.getUserList()
             .observeForever(observer)
