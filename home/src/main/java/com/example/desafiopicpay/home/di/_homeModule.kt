@@ -1,5 +1,9 @@
-package com.example.desafiopicpay.home
+package com.example.desafiopicpay.home.di
 
+import com.example.desafiopicpay.home.UserListAPI
+import com.example.desafiopicpay.home.UserListDataSource
+import com.example.desafiopicpay.home.UserListRemoteDataSource
+import com.example.desafiopicpay.home.UserListRepository
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
