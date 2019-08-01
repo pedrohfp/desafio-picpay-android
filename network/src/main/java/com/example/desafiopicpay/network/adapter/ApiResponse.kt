@@ -3,13 +3,14 @@ package com.example.desafiopicpay.network.adapter
 import retrofit2.Response
 
 internal const val UNKNOWN_CODE = -1
+internal const val NO_CONTENT_CODE = 204
 
 sealed class ApiResponse<T> {
     companion object {
         fun <T> create(response: Response<T>): ApiResponse<T> {
             return if (response.isSuccessful) {
                 val body = response.body()
-                if (body == null || response.code() == 204) {
+                if (body == null || response.code() == NO_CONTENT_CODE) {
                     ApiEmptyResponse()
                 } else {
                     ApiSuccessResponse(body)
