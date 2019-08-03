@@ -1,5 +1,7 @@
-package com.example.desafiopicpay.network
+package com.example.desafiopicpay.network.di
 
+import com.example.desafiopicpay.network.BuildConfig
+import com.example.desafiopicpay.network.LoggingInterceptor
 import com.example.desafiopicpay.network.ui.UiStateLiveDataCallAdapterFactory
 import com.google.gson.Gson
 import okhttp3.Interceptor
