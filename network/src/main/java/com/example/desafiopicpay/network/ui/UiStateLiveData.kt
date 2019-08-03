@@ -20,7 +20,9 @@ class UiStateLiveData<T> : MutableLiveData<UiState<T>>() {
     }
 
     fun <R> swapSource(
-        source: LiveData<UiState<R>>, converter: UiTransformer<R, T>): UiStateLiveData<T> {
+        source: LiveData<UiState<R>>,
+        converter: UiTransformer<R, T>
+    ): UiStateLiveData<T> {
         swapSource(source) {
             converter.map(it)
         }

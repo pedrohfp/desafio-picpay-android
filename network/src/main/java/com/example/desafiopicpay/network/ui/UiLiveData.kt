@@ -1,8 +1,8 @@
 package com.example.desafiopicpay.network.ui
 
 import androidx.lifecycle.MutableLiveData
-import retrofit2.Call
 import java.util.concurrent.atomic.AtomicBoolean
+import retrofit2.Call
 
 internal class UiLiveData<T>(private val call: Call<T>) : MutableLiveData<UiState<T>>() {
 

@@ -5,7 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 
 fun <RESPONSE> LiveData<UiState<RESPONSE>>.observeOnLoading(
-    owner: LifecycleOwner, observer: () -> Unit): LiveData<UiState<RESPONSE>> {
+    owner: LifecycleOwner,
+    observer: () -> Unit
+): LiveData<UiState<RESPONSE>> {
     observe(owner, Observer {
         if (it is UiLoading) observer.invoke()
     })
@@ -13,7 +15,9 @@ fun <RESPONSE> LiveData<UiState<RESPONSE>>.observeOnLoading(
 }
 
 fun <RESPONSE> LiveData<UiState<RESPONSE>>.observeOnSuccess(
-    owner: LifecycleOwner, observer: (RESPONSE) -> Unit): LiveData<UiState<RESPONSE>> {
+    owner: LifecycleOwner,
+    observer: (RESPONSE) -> Unit
+): LiveData<UiState<RESPONSE>> {
     observe(owner, Observer {
         if (it is UiSuccess) observer.invoke(it.data)
     })
@@ -21,7 +25,9 @@ fun <RESPONSE> LiveData<UiState<RESPONSE>>.observeOnSuccess(
 }
 
 fun <RESPONSE> LiveData<UiState<RESPONSE>>.observeOnSuccess(
-    owner: LifecycleOwner, observer: () -> Unit): LiveData<UiState<RESPONSE>> {
+    owner: LifecycleOwner,
+    observer: () -> Unit
+): LiveData<UiState<RESPONSE>> {
     observe(owner, Observer {
         if (it is UiSuccess) observer.invoke()
     })
@@ -29,7 +35,9 @@ fun <RESPONSE> LiveData<UiState<RESPONSE>>.observeOnSuccess(
 }
 
 fun <RESPONSE> LiveData<UiState<RESPONSE>>.observeOnError(
-    owner: LifecycleOwner, observer: (ErrorData) -> Unit): LiveData<UiState<RESPONSE>> {
+    owner: LifecycleOwner,
+    observer: (ErrorData) -> Unit
+): LiveData<UiState<RESPONSE>> {
     observe(owner, Observer {
         if (it is UiError) observer.invoke(it.errorData)
     })

@@ -1,10 +1,10 @@
 package com.example.desafiopicpay.network.ui
 
 import androidx.lifecycle.LiveData
-import retrofit2.CallAdapter
-import retrofit2.Retrofit
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
+import retrofit2.CallAdapter
+import retrofit2.Retrofit
 
 internal class UiStateLiveDataCallAdapterFactory : CallAdapter.Factory() {
 
