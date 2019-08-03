@@ -15,6 +15,7 @@ dependencies {
 
     implementation project(Modules.NETWORK)
     implementation project(Modules.STYLEGUIDE)
+    implementation project(Modules.HOME)
 
     implementation Dependencies.Android.APPCOMPAT
     implementation Dependencies.KTX
