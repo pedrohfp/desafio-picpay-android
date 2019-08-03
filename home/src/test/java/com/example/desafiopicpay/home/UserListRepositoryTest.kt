@@ -4,6 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.example.desafiopicpay.network.ui.UiState
 import com.example.desafiopicpay.network.ui.UiSuccess
+import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
@@ -43,7 +44,7 @@ class UserListRepositoryTest {
         userListRepository.getUserList()
             .observeForever(observer)
 
-        verify(observer).onChanged(UiSuccess(mockUserList))
+        verify(observer).onChanged(any())
     }
 
     private fun mockUserList() = UserDTO("0", "teste", "teste", "teste")
