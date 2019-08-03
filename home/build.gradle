@@ -13,11 +13,10 @@ dependencies {
     implementation project(Modules.STYLEGUIDE)
 
     implementation Dependencies.Android.APPCOMPAT
-    implementation Dependencies.KTX
     implementation Dependencies.Android.CONSTRAINT_LAYOUT
+    implementation Dependencies.Android.RECYCLERVIEW
+    implementation Dependencies.KTX
     implementation Dependencies.Koin.CORE
     implementation Dependencies.Koin.VIEWMODEL
     implementation Dependencies.Koin.SCOPE
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }
