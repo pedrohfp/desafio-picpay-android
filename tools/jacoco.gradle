@@ -35,7 +35,8 @@ task jacocoTestReport(type: JacocoReport) {
             '**/*_ViewBinding*.*',
             '**/*BR*.*',
             '**/databinding/**',
-            '**/di/**'
+            '**/di/**',
+            '**/ui/**'
     ]
 
     def javaTree = fileTree(
