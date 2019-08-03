@@ -6,6 +6,8 @@ import com.example.desafiopicpay.home.data.UserDTO
 import com.example.desafiopicpay.home.data.UserListAPI
 import com.example.desafiopicpay.home.data.datasource.UserListRemoteDataSource
 import com.example.desafiopicpay.home.data.UserListRepository
+import com.example.desafiopicpay.home.utils.fakeUserList
+import com.example.desafiopicpay.home.utils.mockAndSendResponse
 import com.example.desafiopicpay.network.ui.UiState
 import com.example.desafiopicpay.network.ui.UiSuccess
 import com.nhaarman.mockitokotlin2.any
@@ -40,10 +42,8 @@ class UserListRepositoryTest {
 
     @Test
     fun whenGetUserListCalled_verifyObserverChanged() {
-        val mockUserList = listOf(mockUserList())
-
         whenever(userListAPI.getUserList())
-            .mockAndSendResponse(UiSuccess(mockUserList))
+            .mockAndSendResponse(UiSuccess(fakeUserList))
 
         val observer = mock<Observer<UiState<List<UserDTO>>>>()
 
@@ -52,7 +52,4 @@ class UserListRepositoryTest {
 
         verify(observer).onChanged(any())
     }
-
-    private fun mockUserList() =
-        UserDTO("0", "teste", "teste", "teste")
 }
