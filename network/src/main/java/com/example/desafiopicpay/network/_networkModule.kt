@@ -1,6 +1,6 @@
 package com.example.desafiopicpay.network
 
-import com.example.desafiopicpay.network.adapter.LiveDataCallAdapterFactory
+import com.example.desafiopicpay.network.ui.UiStateLiveDataCallAdapterFactory
 import com.google.gson.Gson
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -25,7 +25,7 @@ val networkModule = module {
     single {
         Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(Gson()))
-            .addCallAdapterFactory(LiveDataCallAdapterFactory())
+            .addCallAdapterFactory(UiStateLiveDataCallAdapterFactory())
             .baseUrl(BuildConfig.API_URL)
             .client(get())
             .build()
