@@ -4,6 +4,10 @@
     <item name="colorAccent">@color/colorAccent</item>
   </style>
 
+  <style name="ToolbarDefault">
+    <item name="android:background"></item>
+  </style>
+
   <style name="TextTitleHuge">
     <item name="android:textSize">28sp</item>
   </style>
