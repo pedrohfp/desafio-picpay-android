@@ -1,4 +1,4 @@
-package com.example.desafiopicpay.home
+package com.example.desafiopicpay.home.data
 
 import com.google.gson.annotations.SerializedName
 

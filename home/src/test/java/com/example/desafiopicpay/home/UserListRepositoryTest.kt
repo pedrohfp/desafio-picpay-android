@@ -2,6 +2,10 @@ package com.example.desafiopicpay.home
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
+import com.example.desafiopicpay.home.data.UserDTO
+import com.example.desafiopicpay.home.data.UserListAPI
+import com.example.desafiopicpay.home.data.datasource.UserListRemoteDataSource
+import com.example.desafiopicpay.home.data.UserListRepository
 import com.example.desafiopicpay.network.ui.UiState
 import com.example.desafiopicpay.network.ui.UiSuccess
 import com.nhaarman.mockitokotlin2.any
@@ -27,9 +31,11 @@ class UserListRepositoryTest {
     fun setup() {
         userListAPI = mock()
 
-        val userListDataSource = UserListRemoteDataSource(userListAPI)
+        val userListDataSource =
+            UserListRemoteDataSource(userListAPI)
 
-        userListRepository = UserListRepository(userListDataSource)
+        userListRepository =
+            UserListRepository(userListDataSource)
     }
 
     @Test
@@ -47,5 +53,6 @@ class UserListRepositoryTest {
         verify(observer).onChanged(any())
     }
 
-    private fun mockUserList() = UserDTO("0", "teste", "teste", "teste")
+    private fun mockUserList() =
+        UserDTO("0", "teste", "teste", "teste")
 }
