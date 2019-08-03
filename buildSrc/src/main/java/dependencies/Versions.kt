@@ -5,6 +5,7 @@ object Versions {
     const val CORE_KTX = "1.0.2"
     const val CONSTRAINT_LAYOUT = "1.1.3"
     const val RECYCLERVIEW = "1.0.0"
+    const val MATERIAL = "1.0.0"
     const val KTLINT = "0.34.2"
     const val KOIN = "2.0.1"
     const val RETROFIT = "2.6.0"

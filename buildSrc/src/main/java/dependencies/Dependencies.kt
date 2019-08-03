@@ -12,6 +12,7 @@ object Dependencies {
         const val APPCOMPAT = "androidx.appcompat:appcompat:${Versions.ANDROIDX}"
         const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
         const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:${Versions.RECYCLERVIEW}"
+        const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
     }
 
     object Koin {
