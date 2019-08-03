@@ -15,6 +15,7 @@ dependencies {
     implementation Dependencies.Android.APPCOMPAT
     implementation Dependencies.Android.CONSTRAINT_LAYOUT
     implementation Dependencies.Android.RECYCLERVIEW
+    implementation Dependencies.PICASSO
     implementation Dependencies.KTX
     implementation Dependencies.Koin.CORE
     implementation Dependencies.Koin.VIEWMODEL

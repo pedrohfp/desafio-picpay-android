@@ -6,6 +6,7 @@ object Dependencies {
     const val KTLINT = "com.pinterest:ktlint:${Versions.KTLINT}"
     const val KOIN = "org.koin:koin-android:${Versions.KOIN}"
     const val ARCH_COMPONENTS = "androidx.lifecycle:lifecycle-extensions:${Versions.ARCH_COMPONENTS}"
+    const val PICASSO = "com.squareup.picasso:picasso:${Versions.PICASSO}"
 
     object Android {
         const val APPCOMPAT = "androidx.appcompat:appcompat:${Versions.ANDROIDX}"
