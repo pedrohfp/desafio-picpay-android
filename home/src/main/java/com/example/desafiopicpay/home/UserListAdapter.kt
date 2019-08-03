@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiopicpay.home.data.UserDTO
+import com.example.desafiopicpay.home.util.CircleTransform
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_users_item.view.avatarImageView
 import kotlinx.android.synthetic.main.list_users_item.view.nameTextView
@@ -35,6 +36,7 @@ internal class UserListAdapter(
 
             Picasso.get()
                 .load(userDTO.img)
+                .transform(CircleTransform())
                 .into(itemView.avatarImageView)
         }
     }
