@@ -8,6 +8,7 @@ import com.example.desafiopicpay.home.data.UserDTO
 import com.example.desafiopicpay.network.ui.ErrorData
 import com.example.desafiopicpay.network.ui.observeOnError
 import com.example.desafiopicpay.network.ui.observeOnSuccess
+import kotlinx.android.synthetic.main.activity_home.searchView
 import kotlinx.android.synthetic.main.activity_home.userListRecyclerView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -20,6 +21,7 @@ internal class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         setupViewModel()
+        searchView.setIconifiedByDefault(false)
     }
 
     private fun setupViewModel() {
