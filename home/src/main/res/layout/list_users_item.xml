@@ -4,10 +4,10 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
+  android:layout_height="wrap_content">
 
   <ImageView
-    android:id="@+id/imageView"
+    android:id="@+id/avatarImageView"
     android:layout_width="52dp"
     android:layout_height="52dp"
     android:layout_marginTop="24dp"
@@ -26,8 +26,8 @@
     android:layout_marginLeft="16dp"
     android:textStyle="bold"
     android:textColor="@color/colorPrimary"
-    app:layout_constraintStart_toEndOf="@+id/imageView"
-    app:layout_constraintTop_toTopOf="@+id/imageView"
+    app:layout_constraintStart_toEndOf="@+id/avatarImageView"
+    app:layout_constraintTop_toTopOf="@+id/avatarImageView"
     tools:text="nickname"/>
 
   <TextView
@@ -39,7 +39,7 @@
     android:layout_marginTop="8dp"
     android:layout_marginStart="16dp"
     android:layout_marginLeft="16dp"
-    app:layout_constraintStart_toEndOf="@+id/imageView"
+    app:layout_constraintStart_toEndOf="@+id/avatarImageView"
     app:layout_constraintTop_toBottomOf="@+id/nicknameTextView"
     tools:text="@tools:sample/full_names"/>
 
