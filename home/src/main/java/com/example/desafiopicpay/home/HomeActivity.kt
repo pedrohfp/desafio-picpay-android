@@ -1,12 +1,11 @@
 package com.example.desafiopicpay.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiopicpay.home.data.UserDTO
-import com.example.desafiopicpay.network.ui.ErrorData
-import com.example.desafiopicpay.network.ui.observeOnError
 import com.example.desafiopicpay.network.ui.observeOnSuccess
 import kotlinx.android.synthetic.main.activity_home.searchView
 import kotlinx.android.synthetic.main.activity_home.userListRecyclerView
@@ -16,10 +15,13 @@ internal class HomeActivity : AppCompatActivity() {
 
     private val homeViewModel: HomeViewModel by viewModel()
 
+    private lateinit var adapter: UserListAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        setupViews()
         setupViewModel()
         searchView.setIconifiedByDefault(false)
     }
@@ -27,15 +29,10 @@ internal class HomeActivity : AppCompatActivity() {
     private fun setupViewModel() {
         homeViewModel.loadUserList()
             .observeOnSuccess(this, ::onSuccess)
-            .observeOnError(this, ::onError)
     }
 
     private fun onSuccess(userList: List<UserDTO>) {
         setupRecyclerView(userList)
-    }
-
-    private fun onError(errorData: ErrorData) {
-
     }
 
     private fun setupRecyclerView(userList: List<UserDTO>) {
@@ -46,6 +43,23 @@ internal class HomeActivity : AppCompatActivity() {
 
         userListRecyclerView.layoutManager = layoutManager
 
-        userListRecyclerView.adapter = UserListAdapter(userList)
+        adapter = UserListAdapter(userList)
+
+        userListRecyclerView.adapter = adapter
+    }
+
+    private fun setupViews() {
+        searchView.setIconifiedByDefault(false)
+
+        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                adapter.filter.filter(newText)
+                return true
+            }
+        })
     }
 }
