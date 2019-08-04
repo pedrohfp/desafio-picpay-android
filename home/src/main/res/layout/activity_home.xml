@@ -51,7 +51,7 @@
       android:layout_marginEnd="16dp"
       android:layout_marginLeft="16dp"
       android:layout_marginRight="16dp"
-      app:defaultQueryHint="A quem você deseja pagar?"/>
+      app:defaultQueryHint="@string/home_searchview_hint"/>
 
     <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/userListRecyclerView"

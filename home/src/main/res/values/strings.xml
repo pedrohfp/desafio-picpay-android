@@ -1,4 +1,5 @@
 <resources>
   <string name="app_name">home</string>
   <string name="home_contacts_title">Contatos</string>
+  <string name="home_searchview_hint">A quem você deseja pagar?</string>
 </resources>
