@@ -38,7 +38,6 @@ class HomeViewModelTest {
 
         whenever(userListAPI.getUserList())
             .mockAndSendResponse(UiSuccess(fakeUserList))
-
     }
 
     @Test

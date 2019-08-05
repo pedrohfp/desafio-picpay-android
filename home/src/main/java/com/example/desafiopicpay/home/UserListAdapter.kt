@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.list_users_item.view.nicknameTextView
 
 internal class UserListAdapter(
     private val userList: List<UserDTO>
-): RecyclerView.Adapter<UserListAdapter.ViewHolder>(), Filterable {
+) : RecyclerView.Adapter<UserListAdapter.ViewHolder>(), Filterable {
 
     private var userListFilterable: MutableList<UserDTO> = userList.toMutableList()
 
@@ -26,18 +26,16 @@ internal class UserListAdapter(
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int  = userListFilterable.size
+    override fun getItemCount(): Int = userListFilterable.size
 
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int)  =
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
         holder.bindItems(userListFilterable[position])
-
 
     override fun getFilter(): Filter = UserListFilter(userList, userListFilterable) {
         notifyDataSetChanged()
     }
 
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindItems(userDTO: UserDTO) {
             itemView.nicknameTextView.text = userDTO.username
             itemView.nameTextView.text = userDTO.name
@@ -48,5 +46,4 @@ internal class UserListAdapter(
                 .into(itemView.avatarImageView)
         }
     }
-
 }

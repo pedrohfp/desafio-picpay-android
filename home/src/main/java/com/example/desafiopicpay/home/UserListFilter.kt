@@ -34,5 +34,4 @@ internal class UserListFilter(
             userListFiltered.add(userDTO)
         }
     }
-
 }
