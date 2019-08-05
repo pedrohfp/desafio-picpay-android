@@ -6,10 +6,13 @@ object Dependencies {
     const val KTLINT = "com.pinterest:ktlint:${Versions.KTLINT}"
     const val KOIN = "org.koin:koin-android:${Versions.KOIN}"
     const val ARCH_COMPONENTS = "androidx.lifecycle:lifecycle-extensions:${Versions.ARCH_COMPONENTS}"
+    const val PICASSO = "com.squareup.picasso:picasso:${Versions.PICASSO}"
 
     object Android {
         const val APPCOMPAT = "androidx.appcompat:appcompat:${Versions.ANDROIDX}"
         const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
+        const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:${Versions.RECYCLERVIEW}"
+        const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
     }
 
     object Koin {

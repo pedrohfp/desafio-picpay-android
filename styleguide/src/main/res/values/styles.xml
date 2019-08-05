@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <style name="DarkAppTheme" parent="Theme.AppCompat.DayNight">
+  <style name="DarkAppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
     <item name="colorAccent">@color/colorAccent</item>
+  </style>
+
+  <style name="ToolbarDefault">
+    <item name="android:background"></item>
   </style>
 
   <style name="TextTitleHuge">
