@@ -1,5 +1,6 @@
 package com.example.desafiopicpay.network.di
 
+import androidx.annotation.VisibleForTesting
 import com.example.desafiopicpay.network.BuildConfig
 import com.example.desafiopicpay.network.LoggingInterceptor
 import com.example.desafiopicpay.network.ui.UiStateLiveDataCallAdapterFactory
@@ -9,6 +10,9 @@ import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
+@VisibleForTesting
+var url: String? = null
 
 val networkModule = module {
 
@@ -28,7 +32,7 @@ val networkModule = module {
         Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(Gson()))
             .addCallAdapterFactory(UiStateLiveDataCallAdapterFactory())
-            .baseUrl(BuildConfig.API_URL)
+            .baseUrl(url ?: BuildConfig.API_URL)
             .client(get())
             .build()
     }

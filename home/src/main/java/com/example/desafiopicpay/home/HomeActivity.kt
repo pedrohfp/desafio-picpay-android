@@ -51,7 +51,7 @@ internal class HomeActivity : AppCompatActivity() {
     private fun setupViews() {
         searchView.setIconifiedByDefault(false)
 
-        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return true
             }
