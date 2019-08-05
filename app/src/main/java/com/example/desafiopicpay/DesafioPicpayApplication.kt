@@ -2,7 +2,8 @@ package com.example.desafiopicpay
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
-import com.example.desafiopicpay.network.networkModule
+import com.example.desafiopicpay.home.di.homeModule
+import com.example.desafiopicpay.network.di.networkModule
 import org.koin.core.context.startKoin
 
 class DesafioPicpayApplication : Application() {
@@ -13,7 +14,7 @@ class DesafioPicpayApplication : Application() {
             AppCompatDelegate.MODE_NIGHT_YES)
 
         startKoin {
-            modules(networkModule)
+            modules(listOf(networkModule, homeModule))
         }
     }
 }
