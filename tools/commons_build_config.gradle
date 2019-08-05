@@ -1,4 +1,5 @@
 import dependencies.TestDependencies
+import dependencies.Modules
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -17,6 +18,9 @@ android {
 }
 
 dependencies {
+    testImplementation project(Modules.COMMONSTEST)
+    androidTestImplementation project(Modules.COMMONSTEST)
+
     testImplementation TestDependencies.JUNIT
     testImplementation TestDependencies.MOCKITO_KOTLIN
     testImplementation TestDependencies.MOCK_WEB_SERVER

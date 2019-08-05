@@ -7,7 +7,7 @@ import com.example.desafiopicpay.home.data.UserListAPI
 import com.example.desafiopicpay.home.data.UserListRepository
 import com.example.desafiopicpay.home.data.datasource.UserListRemoteDataSource
 import com.example.desafiopicpay.home.utils.fakeUserList
-import com.example.desafiopicpay.home.utils.mockAndSendResponse
+import com.example.desafiopicpay.commonstest.mockAndSendResponse
 import com.example.desafiopicpay.network.ui.UiState
 import com.example.desafiopicpay.network.ui.UiSuccess
 import com.nhaarman.mockitokotlin2.any
