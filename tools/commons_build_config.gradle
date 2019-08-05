@@ -18,8 +18,8 @@ android {
 }
 
 dependencies {
-    testImplementation project(Modules.COMMONSTEST)
-    androidTestImplementation project(Modules.COMMONSTEST)
+//    testImplementation project(Modules.COMMONSTEST)
+//    androidTestImplementation project(Modules.COMMONSTEST)
 
     testImplementation TestDependencies.JUNIT
     testImplementation TestDependencies.MOCKITO_KOTLIN
@@ -32,4 +32,5 @@ dependencies {
     androidTestImplementation TestDependencies.ESPRESSO_RULE
     androidTestImplementation TestDependencies.ESPRESSO_CONTRIB
     androidTestImplementation TestDependencies.EXT_JUNIT
+    androidTestImplementation TestDependencies.KOIN_TEST
 }
