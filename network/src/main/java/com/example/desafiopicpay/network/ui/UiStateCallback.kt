@@ -48,7 +48,8 @@ class UiStateCallback<R>(private val mutableLiveData: MutableLiveData<UiState<R>
 
     private fun createErrorData(response: Response<R>): ErrorData {
 
-        val errorBody = response.errorBody()?.string()
+        val errorBody = response
+            .errorBody()?.string()
         val throwable = createExceptionMessage(response, errorBody)
 
         return ErrorData(throwable, response.code(), errorBody)
