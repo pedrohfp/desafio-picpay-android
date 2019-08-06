@@ -1,28 +1,12 @@
-package com.example.desafiopicpay.home.matchers
+package com.example.desafiopicpay.commonstest.matchers
 
 import android.content.res.Resources
 import android.view.View
 import androidx.annotation.IdRes
 import androidx.recyclerview.widget.RecyclerView
-import androidx.test.espresso.NoMatchingViewException
-import androidx.test.espresso.ViewAssertion
-import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.Description
 import org.hamcrest.Matcher
-import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.TypeSafeMatcher
-
-class RecyclerViewItemCountAssertion(private val expectedCount: Int) : ViewAssertion {
-
-    override fun check(view: View, noViewFoundException: NoMatchingViewException?) {
-        if (noViewFoundException != null) {
-            throw noViewFoundException
-        }
-        val recyclerView = view as RecyclerView
-        val adapter = recyclerView.adapter
-        assertThat(adapter!!.itemCount, `is`(expectedCount))
-    }
-}
 
 class RecyclerViewMatcher(@IdRes private val recyclerViewId: Int) {
 
@@ -33,8 +17,8 @@ class RecyclerViewMatcher(@IdRes private val recyclerViewId: Int) {
     fun atPosition(position: Int, targetViewId: Int): Matcher<View> {
 
         return object : TypeSafeMatcher<View>() {
-            internal var resources: Resources? = null
-            internal var childView: View? = null
+            var resources: Resources? = null
+            var childView: View? = null
 
             override fun describeTo(description: Description) {
                 var idDescription = Integer.toString(recyclerViewId)

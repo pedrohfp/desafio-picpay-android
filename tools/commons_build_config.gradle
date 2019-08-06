@@ -18,8 +18,8 @@ android {
 }
 
 dependencies {
-//    testImplementation project(Modules.COMMONSTEST)
-//    androidTestImplementation project(Modules.COMMONSTEST)
+    testImplementation project(Modules.COMMONSTEST)
+    androidTestImplementation project(Modules.COMMONSTEST)
 
     testImplementation TestDependencies.JUNIT
     testImplementation TestDependencies.MOCKITO_KOTLIN

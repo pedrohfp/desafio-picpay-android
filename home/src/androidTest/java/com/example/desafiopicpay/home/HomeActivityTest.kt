@@ -11,7 +11,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.example.desafiopicpay.home.di.homeModule
-import com.example.desafiopicpay.home.matchers.RecyclerViewMatcher
+import com.example.desafiopicpay.commonstest.matchers.RecyclerViewMatcher
 import com.example.desafiopicpay.network.di.networkModule
 import com.example.desafiopicpay.network.di.url
 import okhttp3.mockwebserver.MockResponse
