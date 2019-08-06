@@ -4,6 +4,12 @@ import dependencies.TestDependencies
 apply plugin: 'com.android.library'
 apply from: "$rootDir/tools/commons_build_config.gradle"
 
+android {
+    lintOptions {
+        abortOnError false
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
