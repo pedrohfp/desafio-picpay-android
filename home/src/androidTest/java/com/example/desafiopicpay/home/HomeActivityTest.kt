@@ -14,7 +14,7 @@ import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 
 @RunWith(AndroidJUnit4::class)
-class HomeActivityTest {
+internal class HomeActivityTest {
     @get:Rule
     val activityRule = ActivityTestRule<HomeActivity>(
         HomeActivity::class.java, true, false)
