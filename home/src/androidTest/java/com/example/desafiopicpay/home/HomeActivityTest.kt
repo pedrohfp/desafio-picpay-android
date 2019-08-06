@@ -1,22 +1,10 @@
 package com.example.desafiopicpay.home
 
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.IdlingRegistry
-import androidx.test.espresso.action.ViewActions.replaceText
-import androidx.test.espresso.action.ViewActions.swipeUp
-import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
+import com.example.desafiopicpay.commonstest.robots.RobotsRule
 import com.example.desafiopicpay.home.di.homeModule
-import com.example.desafiopicpay.commonstest.matchers.RecyclerViewMatcher
 import com.example.desafiopicpay.network.di.networkModule
-import com.example.desafiopicpay.network.di.url
-import okhttp3.mockwebserver.MockResponse
-import okhttp3.mockwebserver.MockWebServer
-import org.hamcrest.Matchers.not
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -31,21 +19,17 @@ internal class HomeActivityTest {
     val activityRule = ActivityTestRule<HomeActivity>(
         HomeActivity::class.java, true, false)
 
-    private lateinit var server: MockWebServer
-
-    private lateinit var recyclerViewIdlingResource: RecyclerViewIdlingResource
+    @get:Rule
+    val homeActivityRobots = RobotsRule(HomeActivityRobots(activityRule))
 
     @Before
     fun setup() {
-        server = MockWebServer()
-
-        server.enqueue(MockResponse().setResponseCode(200).setBody(userListJson))
+        homeActivityRobots.setup()
 
         startKoin {
             modules(listOf(networkModule, homeModule))
         }
 
-        url = server.url("/").toString()
     }
 
     @After
@@ -56,24 +40,24 @@ internal class HomeActivityTest {
     @Test
     fun whenListScroll_verifyContactTitleIsNotDisplayed() {
 
-        activityRule.launchActivity(null)
-
-        recyclerViewIdlingResource = RecyclerViewIdlingResource(activityRule.activity)
-
-        IdlingRegistry.getInstance().register(recyclerViewIdlingResource)
-        onView(withId(android.R.id.content)).perform(swipeUp())
-        IdlingRegistry.getInstance().unregister(recyclerViewIdlingResource)
-
-        onView(withId(R.id.homeTitleTextView)).check(matches(not(isDisplayed())))
+        homeActivityRobots {
+            mockApi()
+            startScreen()
+            scrollList()
+            verifyContactTitleIsNotDisplayed()
+        }
     }
 
     @Test
     fun whenSearchName_verifyListIsFiltered() {
-        activityRule.launchActivity(null)
 
-        onView(withId(R.id.search_src_text)).perform(replaceText("Wagner Oliveira"))
-        onView(RecyclerViewMatcher(R.id.userListRecyclerView)
-            .atPosition(0, R.id.nameTextView))
-            .check(matches(withText("Wagner Oliveira")))
+        val user = "Wagner Oliveira"
+
+        homeActivityRobots {
+            mockApi()
+            startScreen()
+            typeOnSearchView(user)
+            verifyListFiltered(user)
+        }
     }
 }

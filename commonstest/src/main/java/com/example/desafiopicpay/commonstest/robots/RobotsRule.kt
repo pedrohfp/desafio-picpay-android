@@ -1,4 +1,4 @@
-package br.com.odete.commonstest.test.robots
+package com.example.desafiopicpay.commonstest.robots
 
 import org.junit.rules.TestRule
 import org.junit.runner.Description
@@ -29,15 +29,8 @@ class RobotsRule<T : Robots>(private val robot: T) : TestRule {
         }
     }
 
-    /**
-     * Execute setuo created in {@see Robot#setup()}
-     */
+
     fun setup() = robot.setup()
 
-    /**
-     * This operator make you call your robot without calling the method
-     *
-     * https://kotlinlang.org/docs/reference/operator-overloading.html#invoke
-     */
     operator fun invoke(func: T.() -> Unit) = createRobots(func, robot)
 }
