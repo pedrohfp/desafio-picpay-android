@@ -1,4 +1,4 @@
-package com.example.desafiopicpay.commonstest.robots
+package com.example.desafiopicpay.home.robots
 
 /**
  * From a {@see Robot} implementation create a extension function

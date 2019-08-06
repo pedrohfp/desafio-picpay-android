@@ -2,7 +2,7 @@ package com.example.desafiopicpay.home
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
-import com.example.desafiopicpay.commonstest.robots.RobotsRule
+import com.example.desafiopicpay.home.robots.RobotsRule
 import com.example.desafiopicpay.home.di.homeModule
 import com.example.desafiopicpay.network.di.networkModule
 import org.junit.After

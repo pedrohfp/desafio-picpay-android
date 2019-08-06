@@ -1,4 +1,4 @@
-package com.example.desafiopicpay.commonstest.robots
+package com.example.desafiopicpay.home.robots
 
 import org.junit.rules.TestRule
 import org.junit.runner.Description

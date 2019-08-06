@@ -1,5 +1,4 @@
 include ':app',
         ':home',
         ':styleguide',
-        ':network',
-        ':commonstest'
+        ':network'

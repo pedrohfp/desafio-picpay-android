@@ -1,4 +1,4 @@
-package com.example.desafiopicpay.commonstest.robots
+package com.example.desafiopicpay.home.robots
 
 /**
  * Used by {@see RobotsRule} to create a Robots Pattern class

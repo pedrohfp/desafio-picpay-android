@@ -1,4 +1,4 @@
-package com.example.desafiopicpay.commonstest.matchers
+package com.example.desafiopicpay.home.matchers
 
 import android.content.res.Resources
 import android.view.View

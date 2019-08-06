@@ -9,8 +9,8 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.rule.ActivityTestRule
-import com.example.desafiopicpay.commonstest.matchers.RecyclerViewMatcher
-import com.example.desafiopicpay.commonstest.robots.Robots
+import com.example.desafiopicpay.home.matchers.RecyclerViewMatcher
+import com.example.desafiopicpay.home.robots.Robots
 import com.example.desafiopicpay.network.di.url
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
