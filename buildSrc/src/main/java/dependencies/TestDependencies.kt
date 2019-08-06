@@ -11,4 +11,5 @@ object TestDependencies {
     const val ESPRESSO_CONTRIB = "androidx.test.espresso:espresso-contrib:${Versions.ESPRESSO_CORE}"
     const val EXT_JUNIT = "androidx.test.ext:junit:${Versions.EXT_JUNIT}"
     const val KOIN_TEST = "org.koin:koin-test:${Versions.KOIN}"
+    const val ORCHESTRATOR = "androidx.test:orchestrator:${Versions.ESPRESSO_RUNNER}"
 }
