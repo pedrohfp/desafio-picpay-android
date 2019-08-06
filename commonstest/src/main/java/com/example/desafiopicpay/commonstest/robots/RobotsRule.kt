@@ -29,7 +29,6 @@ class RobotsRule<T : Robots>(private val robot: T) : TestRule {
         }
     }
 
-
     fun setup() = robot.setup()
 
     operator fun invoke(func: T.() -> Unit) = createRobots(func, robot)

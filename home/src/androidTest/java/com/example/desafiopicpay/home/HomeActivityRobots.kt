@@ -16,7 +16,7 @@ import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.hamcrest.CoreMatchers.not
 
-internal class HomeActivityRobots(private val rule: ActivityTestRule<HomeActivity>): Robots {
+internal class HomeActivityRobots(private val rule: ActivityTestRule<HomeActivity>) : Robots {
     private lateinit var server: MockWebServer
 
     private lateinit var recyclerViewIdlingResource: RecyclerViewIdlingResource

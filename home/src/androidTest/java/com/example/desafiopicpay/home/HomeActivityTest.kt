@@ -29,7 +29,6 @@ internal class HomeActivityTest {
         startKoin {
             modules(listOf(networkModule, homeModule))
         }
-
     }
 
     @After
