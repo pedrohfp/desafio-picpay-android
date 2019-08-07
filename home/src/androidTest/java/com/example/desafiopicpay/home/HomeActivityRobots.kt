@@ -2,6 +2,7 @@ package com.example.desafiopicpay.home
 
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
+import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
 import androidx.test.espresso.action.ViewActions.replaceText
 import androidx.test.espresso.action.ViewActions.swipeUp
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -50,7 +51,7 @@ internal class HomeActivityRobots(private val rule: ActivityTestRule<HomeActivit
 
     fun typeOnSearchView(text: String) {
         onView(withId(R.id.search_src_text)).perform(
-            replaceText(text)
+            replaceText(text), closeSoftKeyboard()
         )
     }
 
