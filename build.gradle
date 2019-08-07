@@ -1,21 +1,17 @@
 import dependencies.BuildPlugins
 import dependencies.Dependencies
-import dependencies.TestDependencies
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.3.21'
     repositories {
         google()
         jcenter()
-        maven { url RepositoriesUri.GRADLE }
     }
     dependencies {
         classpath BuildPlugins.GRADLE
         classpath BuildPlugins.KOTLIN
         classpath BuildPlugins.DETEKT
         classpath BuildPlugins.JACOCO
-        classpath BuildPlugins.COVERALLS
     }
 }
 

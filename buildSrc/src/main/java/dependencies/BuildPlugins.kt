@@ -5,5 +5,4 @@ object BuildPlugins {
     const val GRADLE = "com.android.tools.build:gradle:${PluginsVersions.GRADLE}"
     const val DETEKT = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${PluginsVersions.DETEKT}"
     const val JACOCO = "org.jacoco:org.jacoco.core:${PluginsVersions.JACOCO}"
-    const val COVERALLS = "gradle.plugin.com.github.kt3k.coveralls:coveralls-gradle-plugin:${PluginsVersions.COVERALLS}"
 }
