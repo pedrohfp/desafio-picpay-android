@@ -55,6 +55,7 @@ internal class HomeActivityTest {
         homeActivityRobots {
             mockApi()
             startScreen()
+            scrollList()
             typeOnSearchView(user)
             verifyListFiltered(user)
         }
