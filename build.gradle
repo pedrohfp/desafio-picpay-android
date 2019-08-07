@@ -1,5 +1,6 @@
 import dependencies.BuildPlugins
 import dependencies.Dependencies
+import dependencies.TestDependencies
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
@@ -39,6 +40,7 @@ subprojects {
                 versionCode AndroidConfig.VERSION_CODE
                 versionName AndroidConfig.VERSION_NAME
                 testInstrumentationRunner AndroidConfig.TEST_INSTRUMENTATION_RUNNER
+                multiDexEnabled true
             }
         }
 
