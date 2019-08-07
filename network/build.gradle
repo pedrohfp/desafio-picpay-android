@@ -1,7 +1,7 @@
 import dependencies.Dependencies
 
 apply plugin: 'com.android.library'
-apply from: "$rootDir/tools/base_build_config.gradle"
+apply from: "$rootDir/tools/commons_build_config.gradle"
 
 android {
     defaultConfig {
