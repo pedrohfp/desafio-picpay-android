@@ -1,7 +1,6 @@
 import dependencies.PluginsVersions
 
 apply plugin: 'jacoco'
-apply plugin: 'com.github.kt3k.coveralls'
 
 jacoco {
     toolVersion = PluginsVersions.JACOCO
@@ -62,9 +61,4 @@ task jacocoTestReport(type: JacocoReport) {
     doLast {
         println "Jacoco report has been generated to file://${reports.html.destination}/index.html"
     }
-}
-
-coveralls {
-    sourceDirs = sources.flatten()
-    jacocoReportPath = "$buildDir/reports/jacoco/jacocoTestReport/jacocoTestReport.xml"
 }
