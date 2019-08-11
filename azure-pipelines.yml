@@ -3,27 +3,18 @@
 # Add steps that test, sign, and distribute the APK, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 
-stage: Build
-  trigger:
-    - master
-    - develop
 
-  pool:
-    vmImage: 'macos-latest'
+stages:
+  stage: Build
+    trigger:
+      - master
+      - develop
 
-  jobs:
-    job: Gradle
-      steps:
-          - task: Gradle@2
-            inputs:
-              workingDirectory: ''
-              gradleWrapperFile: 'gradlew'
-              gradleOptions: '-Xmx3072m'
-              publishJUnitResults: false
-              testResultsFiles: '**/TEST-*.xml'
-              tasks: 'assembleDebug ktlint detektCheck lint'
+    pool:
+      vmImage: 'macos-latest'
 
-      job: Linters
+    jobs:
+      job: Gradle
         steps:
             - task: Gradle@2
               inputs:
@@ -32,7 +23,18 @@ stage: Build
                 gradleOptions: '-Xmx3072m'
                 publishJUnitResults: false
                 testResultsFiles: '**/TEST-*.xml'
-                tasks: 'assembleDebug ktlint detektCheck lint'
+                tasks: 'assembleDebug'
+
+        job: Linters
+          steps:
+              - task: Gradle@2
+                inputs:
+                  workingDirectory: ''
+                  gradleWrapperFile: 'gradlew'
+                  gradleOptions: '-Xmx3072m'
+                  publishJUnitResults: false
+                  testResultsFiles: '**/TEST-*.xml'
+                  tasks: 'ktlint detektCheck lint'
 
 
 
