@@ -2,39 +2,28 @@
 # Build your Android project with Gradle.
 # Add steps that test, sign, and distribute the APK, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
+
 trigger:
-  - master
-  - develop
+- master
+- develop
 
-jobs:
-- job: Gradle
+pool:
+  vmImage: 'macos-latest'
 
-  pool:
-    vmImage: 'macos-latest'
+steps:
+- task: Gradle@2
+  inputs:
+    workingDirectory: ''
+    gradleWrapperFile: 'gradlew'
+    gradleOptions: '-Xmx3072m'
+    publishJUnitResults: false
+    testResultsFiles: '**/TEST-*.xml'
+    tasks: 'assembleDebug ktlint detektCheck lint'
 
-  steps:
-    - task: Gradle@2
+- task: Linters
+    input:
       inputs:
         workingDirectory: ''
         gradleWrapperFile: 'gradlew'
         gradleOptions: '-Xmx3072m'
-        publishJUnitResults: false
-        testResultsFiles: '**/TEST-*.xml'
-        tasks: 'assembleDebug'
-
-- job: Linters
-
-  pool:
-      vmImage: 'macos-latest'
-
-  steps:
-    - task: Linters
-      inputs:
-        workingDirectory: ''
-        gradleWrapperFile: 'gradlew'
-        gradleOptions: '-Xmx3072m'
-        publishJUnitResults: false
-        testResultsFiles: '**/TEST-*.xml'
         tasks: 'ktlint detektCheck lint'
-
-
