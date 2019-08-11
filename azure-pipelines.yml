@@ -2,12 +2,12 @@
 # Build your Android project with Gradle.
 # Add steps that test, sign, and distribute the APK, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
-
+trigger:
+  - master
+  - develop
+  -
 jobs:
 - job: Gradle
-  trigger:
-    - master
-    - develop
 
   pool:
     vmImage: 'macos-latest'
@@ -23,10 +23,6 @@ jobs:
         tasks: 'assembleDebug'
 
 - job: Linters
-
-  trigger:
-    - master
-    - develop
 
   pool:
       vmImage: 'macos-latest'
