@@ -15,6 +15,12 @@ object Dependencies {
         const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
     }
 
+    object Arch {
+        const val LIFECYCLE_SCOPE = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE_SCOPE}"
+        const val VIEWMODEL_SCOPE = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.VIEW_MODEL_SCOPE}"
+        const val LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIVEDATA}"
+    }
+
     object Koin {
         const val CORE = "org.koin:koin-android:${Versions.KOIN}"
         const val SCOPE = "org.koin:koin-androidx-scope:${Versions.KOIN}"

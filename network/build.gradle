@@ -16,6 +16,9 @@ dependencies {
     implementation Dependencies.KTX
     implementation Dependencies.Android.CONSTRAINT_LAYOUT
     implementation Dependencies.Koin.CORE
+    implementation Dependencies.Arch.VIEWMODEL_SCOPE
+    implementation Dependencies.Arch.LIFECYCLE_SCOPE
+    implementation Dependencies.Arch.LIVEDATA
     implementation Dependencies.ARCH_COMPONENTS
     implementation Dependencies.Network.LOGGING
     api Dependencies.Network.RETROFIT
